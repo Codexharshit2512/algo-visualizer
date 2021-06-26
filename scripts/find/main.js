@@ -49,7 +49,7 @@ function generateGrid() {
     }
     grid.append(row);
   }
-  console.log("grpah", graph);
+
   let sNode = grabSourceNode();
   sNode.addClass("source-node");
   let tNode = grabTargetNode();
@@ -244,7 +244,6 @@ function assignNodeEventListners() {
         graph[row][col] = -1;
         $(this).html("");
         blockCells++;
-        console.log("gratest", graph);
       }
     });
   });
