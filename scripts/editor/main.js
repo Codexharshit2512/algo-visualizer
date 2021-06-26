@@ -184,7 +184,6 @@ $(document).ready(function () {
   editor.setTheme(`ace/theme/${theme}`);
   $("#editor")[0].style.fontSize = `${size}px`;
   editor.session.setMode(`ace/mode/${language}`);
-  console.log(JSON.parse(program));
   editor.session.setValue(program, -1);
   $("#lang-selector").val(language);
   $("#font-selector").val(size);
