@@ -8,6 +8,7 @@ $(".delay-indicator").html(
   `Delay: ${parseInt($(".delay-input input").val())}ms`
 );
 $(".delay-input input").change(function (e) {
+  e.preventDefault();
   const val = parseInt($(this).val());
   $(".delay-indicator").html(`Delay: ${val}ms`);
   delay = val;
@@ -15,6 +16,7 @@ $(".delay-input input").change(function (e) {
 
 $(".size-indicator").html(`Size: ${parseInt($(".size-input input").val())}`);
 $(".size-input input").change(function (e) {
+  e.preventDefault();
   const val = parseInt($(this).val());
   $(".size-indicator").html(`Size: ${val}`);
   size = val;

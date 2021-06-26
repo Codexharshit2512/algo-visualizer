@@ -2,6 +2,7 @@ async function Bfshelper(graph, source, target) {
   const path = await Bfs(graph, source, target);
   console.log(path);
   if (path) await generatePath(path);
+  console.log(graph);
   endAlgorithm();
 }
 

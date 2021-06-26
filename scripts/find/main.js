@@ -15,6 +15,7 @@ $(".delay-indicator").html(
   `Delay: ${parseInt($(".delay-input input").val())}ms`
 );
 $(".delay-input input").change(function (e) {
+  e.preventDefault();
   const val = parseInt($(this).val());
   $(".delay-indicator").html(`Delay: ${val}ms`);
   delay = val;
@@ -24,6 +25,7 @@ function generateGrid() {
   gridEmpty = true;
   $("#start-btn").css({ cursor: "pointer" });
   $("#start-btn").removeClass("disabled");
+  const value = $("#algo-selector").val();
   arr = [];
   let grid = $("#main-grid");
   grid.html("");
@@ -54,6 +56,7 @@ function generateGrid() {
   tNode.addClass("target-node");
   assignNodeEventListners();
   assignSourceAndTargetListeners();
+  if (value == "Dijkstra") assignWeightsToGraph(graph);
 }
 
 function addBoundaryClasses(elem, i, j) {
@@ -241,6 +244,7 @@ function assignNodeEventListners() {
         graph[row][col] = -1;
         $(this).html("");
         blockCells++;
+        console.log("gratest", graph);
       }
     });
   });
@@ -306,9 +310,11 @@ function assignWeightsToGraph(graph) {
 function removeWeights(graph) {
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      graph[i][j] = 0;
-      if (!isEqual(i, j, "source") && !isEqual(i, j, "target")) {
-        $(`#row-${i}-col-${j}`).html("");
+      if (!$(`#row-${i}-col-${j}`).hasClass("block-cell")) {
+        graph[i][j] = 0;
+        if (!isEqual(i, j, "source") && !isEqual(i, j, "target")) {
+          $(`#row-${i}-col-${j}`).html("");
+        }
       }
     }
   }

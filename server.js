@@ -16,15 +16,15 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/sort", (req, res) => {
-  res.render("main");
+app.get("/sortVisualizer", (req, res) => {
+  res.render("sort");
 });
 
-app.get("/search", (req, res) => {
+app.get("/searchVisualizer", (req, res) => {
   res.render("search");
 });
 
-app.get("/find", (req, res) => {
+app.get("/pathFinder", (req, res) => {
   res.render("Pathfind");
 });
 
@@ -33,7 +33,6 @@ app.get("/editor", (req, res) => {
 });
 
 app.post("/execute", (req, res) => {
-  console.log(req.body);
   var program = {
     script: req.body.program,
     stdin: req.body.stdin,
