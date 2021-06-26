@@ -46,7 +46,7 @@ $(".run-code-btn").click(function (e) {
   $(".cpu-time").html("");
   $(".memory").html("");
   $(".output-container").append($(loadingHtml));
-  fetch("http://localhost:5000/execute", {
+  fetch("https://algo-visualizer242.herokuapp.com/execute", {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -166,7 +166,9 @@ Press <strong class="bold">Esc</strong> to exit full screen
 </div>`;
 
 $(document).ready(function () {
-  const program = localStorage.getItem("code");
+  const program = localStorage.getItem("code")
+    ? JSON.parse(localStorage.getItem("code"))
+    : "";
   const language = localStorage.getItem("language")
     ? JSON.parse(localStorage.getItem("language"))
     : "c_cpp";
@@ -183,7 +185,7 @@ $(document).ready(function () {
   $("#editor")[0].style.fontSize = `${size}px`;
   editor.session.setMode(`ace/mode/${language}`);
   console.log(JSON.parse(program));
-  editor.session.setValue(JSON.parse(program), -1);
+  editor.session.setValue(program, -1);
   $("#lang-selector").val(language);
   $("#font-selector").val(size);
   $("#theme-selector").val(theme);
