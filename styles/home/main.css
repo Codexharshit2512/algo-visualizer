@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+#main-header {
+  padding: 1.5rem 2rem;
+}
+
+.text-editor-btn {
+  background: #d3d3d3;
+  border-radius: 10px;
+  font-weight: 500;
+  width: 150px;
+  cursor: pointer;
+  padding: 0.7rem 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  font-size: 17px;
+  color: black;
+  position: relative;
+  transition: transform 200ms ease-in;
+}
+
+.text-editor-btn:hover {
+  transform: scale(1.1);
+}
+
+.text-editor-btn a {
+  color: #000;
+  text-decoration: none;
+}
+
+main {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-text-container {
+  padding: 1rem;
+  width: 40%;
+}
+
+.nav-links {
+  padding: 1rem;
+  width: 40%;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* color: white; */
+}
+.nav-link {
+  width: 400px;
+}
+
+.big-text {
+  font-size: 60px;
+  background-image: radial-gradient(
+    circle 597px at 93% 9.8%,
+    rgba(255, 61, 89, 1) 1.7%,
+    rgba(252, 251, 44, 1) 97%
+  );
+  /* background: -webkit-linear-gradient(#eee, #333); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtext {
+  margin-top: 10px;
+  font-size: 20px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a.animated-button:link,
+a.animated-button:visited {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 0.08em;
+  border-radius: 0;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+a.animated-button:link:after,
+a.animated-button:visited:after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  width: 150%;
+  z-index: -1;
+  -webkit-transition: all 0.75s ease 0s;
+  -moz-transition: all 0.75s ease 0s;
+  -o-transition: all 0.75s ease 0s;
+  transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover,
+a.animated-button:visited:hover {
+  color: #fff;
+  text-shadow: none;
+}
+a.animated-button:link:hover:after,
+a.animated-button:visited:hover:after {
+  height: 580%;
+}
+a.animated-button:link,
+a.animated-button:visited {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+a.animated-button.victoria-two {
+  border: 2px solid #d24d57;
+}
+a.animated-button.victoria-two:after {
+  background: #d24d57;
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+  transform: translateX(-50%) translateY(-50%) rotate(25deg);
+}

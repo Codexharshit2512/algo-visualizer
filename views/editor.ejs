@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/editor/main.css">
+    <title>Code Editor</title>
+</head>
+<body>
+    <div class="nav-back"><a href="http://localhost:5000/"><i class="fas fa-arrow-left"></i></a></div>
+    <header id="main-header">
+      <h1>Code Playground-Write and Execute your code</h1>
+    </header>
+    <main>
+        <div class="editor-container">
+            <div class="editor-header">
+                <select class="select" id="lang-selector">
+                    <option value="c_cpp">C++</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="python">Python</option>
+                </select>
+                <select class="select" id="font-selector">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16">16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                </select>
+                <select class="select" id="theme-selector">
+                    <option value="monokai">Monokai</option>
+                    <option value="twilight">Twilight</option>
+                    <option value="chaos">Chaos</option>
+                    <option value="clouds">Clouds</option>
+                    <option value="xcode">Xcode</option>
+                </select>
+                <div class="fullscreen-btn">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </div>
+            </div>
+            <div id="editor"></div>
+            <div class="console-container">
+                <div class="console-header">
+                    <div class="open-console-btn">
+                        <i class="fas fa-chevron-down"></i>
+                       <span>Console</span>
+                    </div>
+                    <div class="run-code-btn">Run Code</div>
+                </div>
+                <div class="console-input-container">
+                    <textarea placeholder="Add your input here"  id="console-input" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="dragbar"></div>
+        <div class="output-container">
+            <div class="output-header">
+                <i class="far fa-chart-bar"></i>
+                Result
+            </div>
+            <div class="output-window">
+               <div class="cpu-time"></div>
+               <div class="memory"></div>
+               <div class="output"></div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="/editor/main.js"></script>
+</html>

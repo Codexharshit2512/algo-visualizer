@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/pathVisuals/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Algorithm Visualizer</title>
+</head>
+<body>
+    <div class="nav-back"><a href="http://localhost:5000/"><i class="fas fa-arrow-left"></i></a></div>
+  
+    <header id="main-header">
+        <h2 class="heading">PathFinding Visualizer</h2>
+        <div class="controls">
+            <div class="delay-input">
+               <input type="range" min="0" max="600" step="20" value="100">
+                <p class="delay-indicator">Delay: </p>
+            </div>
+            <!-- <div class="size-input">
+           
+               <input type="range" min="30" max="100" value="40" step="10" >
+               <p class="size-indicator">Size:</p>
+           </div> -->
+           <div class="control-element">
+               <select id="algo-selector">
+                   <option value="Bfs">Breadth First Search(BFS)</option>
+                   <option value="Dijkstra">Dijkstra Algorithm</option>
+                   <option value="Dfs">Depth First Search</option>
+                </select>
+           </div>
+           <div class="control-element"><button id="clear-btn" type="button">Clear Grid</button></div>
+           <div class="control-element"><button id="clear-blocks" type="button">Clear Block Cells</button></div>
+           <div class="control-element"><button id="start-btn" type="button">Visualize</button></div>
+        </div>
+        <div class="legends-container">
+            <div class="legend visited-legend">
+               <div class="color-block"></div>
+               <span>Visited</span>
+            </div>
+            <div class="legend unvisited-legend">
+                <div class="color-block"></div>
+                <span>Unvisited</span>
+             </div>
+             <div class="legend path-legend">
+                <div class="color-block"></div>
+                <span>Path</span>
+             </div>
+             <div class="legend block-legend">
+                <div class="color-block"></div>
+                <span>Block Cell</span>
+                <span>(CTRL+LMB->To add block)</span>
+             </div>
+        </div>
+     </header> 
+     <div id="main-grid"></div>
+</body>
+<script src="/find/main.js"></script>
+<script src="/find/updates.js"></script>
+<script src="/find/dataStructures.js"></script>
+<script src="/find/Bfs.js"></script>
+<script src="/find/dijkstra.js"></script>
+</html>

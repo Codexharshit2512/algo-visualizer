@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1d1f30;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-back {
+  position: fixed;
+  left: 24px;
+  top: 14px;
+}
+.fas.fa-arrow-left {
+  color: #fff;
+  font-size: 23px;
+}
+
+#main-header {
+  padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+  background-color: #1d1f30;
+  box-shadow: 1px 1px 10px 0 #000;
+  color: white;
+}
+.heading {
+  text-align: center;
+  color: #f0e130;
+}
+
+/* .control-element {
+  border: 2px solid white;
+} */
+
+.controls {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.controls p {
+  text-align: center;
+  font-size: 16px;
+}
+
+#search-btn,
+#shuffle-btn,
+#clear-btn {
+  padding: 5px 1.3rem 5px 1.3rem;
+  font-size: 17px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(236, 111, 8);
+  transition: background-color 200ms ease-in;
+  cursor: pointer;
+}
+
+#search-btn:hover,
+#shuffle-btn:hover,
+#clear-btn:hover {
+  background-color: rgb(240, 137, 53);
+}
+
+#search-selector {
+  padding: 5px;
+  background-color: #1d1f30;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+}
+
+#search-selector option {
+  padding: 2px 5px;
+}
+
+.search-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.disabled {
+  background-color: rgb(138, 69, 12) !important;
+}
+
+.disabled:hover {
+  background-color: rgb(138, 69, 12) !important;
+}
+
+.arr-num {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-left: none;
+}
+
+#search-input {
+  height: 70%;
+  outline: 0;
+  padding: 1px;
+  width: 90px;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.arr-num:first-child {
+  border-left: 2px solid #fff;
+}
+
+.search-result {
+  margin-top: 3rem;
+  font-size: 20px;
+  text-align: center;
+  animation: appear 400ms 1 forwards;
+}
+.success {
+  color: #0bda51;
+}
+.fail {
+  color: red;
+}
+
+.search-msg {
+  margin-top: 3rem;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(236, 111, 8);
+  animation: appear 400ms 1 forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

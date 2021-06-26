@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1d1f30;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-back {
+  position: fixed;
+  left: 24px;
+  top: 14px;
+}
+.fas.fa-arrow-left {
+  color: #fff;
+  font-size: 23px;
+}
+
+#main-header {
+  padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+  background-color: #1d1f30;
+  box-shadow: 1px 1px 10px 0 #000;
+  color: white;
+}
+.heading {
+  text-align: center;
+  color: #f0e130;
+}
+
+/* .control-element {
+  border: 2px solid white;
+} */
+
+.controls {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.controls p {
+  text-align: center;
+  font-size: 16px;
+}
+
+#sort-btn,
+#shuffle-btn {
+  padding: 5px 1.3rem 5px 1.3rem;
+  font-size: 17px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(236, 111, 8);
+  transition: background-color 200ms ease-in;
+  cursor: pointer;
+}
+
+#sort-btn:hover,
+#shuffle-btn:hover {
+  background-color: rgb(240, 137, 53);
+}
+
+.disabled {
+  background-color: rgb(138, 69, 12) !important;
+}
+
+.disabled:hover {
+  background-color: rgb(138, 69, 12) !important;
+}
+
+#sort-selector {
+  padding: 5px;
+  background-color: #1d1f30;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+}
+
+#sort-selector option {
+  padding: 2px 5px;
+}
+
+.bars-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bar {
+  margin-left: 5px;
+  background-color: #4cd3c2;
+  transition: height 100ms ease-in;
+}

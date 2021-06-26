@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/searchVisuals/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Algorithm Visualizer</title>
+</head>
+<body>
+    <div class="nav-back"><a href="http://localhost:5000/"><i class="fas fa-arrow-left"></i></a></div>
+  <header id="main-header">
+     <h2 class="heading">Searching Visualizer</h2>
+     <div class="controls">
+         <div class="delay-input">
+            <input type="range" min="0" max="600" step="20" value="100">
+             <p class="delay-indicator">Delay: </p>
+         </div>
+         <div class="size-input">
+            <input type="range" min="10" max="30" value="10" step="5" >
+            <p class="size-indicator">Size:</p>
+        </div>
+        <div class="control-element">
+            <select id="search-selector">
+                <option value="linear search">Linear Search</option>
+                <option value="binary search">Binary Search</option>
+                <option value="ternary search">Ternary Search</option>
+             </select>
+        </div>
+        <div class="control-element">
+            <button id="clear-btn" type="button">Clear</button>
+        </div>
+        <div class="control-element">
+            <input type="number" id="search-input" min="1" max="400"  />
+            <button id="search-btn" type="button">Search</button></div>
+        <div class="control-element"><button id="shuffle-btn" type="button">Create New Array</button></div>
+     </div>
+  </header>    
+  <div class="search-container"></div>
+  <!-- <div class="search-result"></div> -->
+</body>
+<script src="/search/main.js"></script>
+<script src="/search/colors.js"></script>
+<script src="/search/updates.js"></script>
+<script src="/search/linearSearch.js"></script>
+<script src="/search/binarySearch.js"></script>
+<script src="/search/ternarySearch.js"></script>
+</html>

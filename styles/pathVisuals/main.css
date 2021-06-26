@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1d1f30;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+#main-header {
+  padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+  background-color: #1d1f30;
+  box-shadow: 1px 1px 10px 0 #000;
+  color: white;
+}
+.heading {
+  text-align: center;
+  color: #f0e130;
+}
+
+/* .control-element {
+  border: 2px solid white;
+} */
+
+.controls {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.controls p {
+  text-align: center;
+  font-size: 16px;
+}
+.nav-back {
+  position: fixed;
+  left: 24px;
+  top: 14px;
+}
+.fas.fa-arrow-left {
+  color: #fff;
+  font-size: 23px;
+}
+
+.legends-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 17px;
+}
+.legend {
+  display: flex;
+}
+.color-block {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+}
+
+.legend span {
+  margin-left: 3px;
+}
+
+.visited-legend .color-block {
+  background: #ba135d;
+}
+
+.unvisited-legend .color-block {
+  background: none;
+}
+
+.block-legend .color-block {
+  background: #892cdc;
+}
+
+.path-legend .color-block {
+  background: #66de93;
+}
+
+#start-btn,
+#clear-btn,
+#clear-blocks {
+  padding: 5px 1.3rem 5px 1.3rem;
+  font-size: 17px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(236, 111, 8);
+  transition: background-color 200ms ease-in;
+  cursor: pointer;
+}
+
+#start-btn:hover,
+#clear-btn:hover,
+#clear-blocks:hover {
+  background-color: rgb(240, 137, 53);
+}
+
+#algo-selector {
+  padding: 5px;
+  background-color: #1d1f30;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+}
+
+#main-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
+
+.disabled {
+  background-color: rgb(138, 69, 12) !important;
+}
+
+.disabled:hover {
+  background-color: rgb(138, 69, 12) !important;
+}
+
+.node {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 1px solid #fff;
+  /* margin: 1px; */
+}
+
+.boundary-top {
+  border-top-width: 2px;
+}
+
+.boundary-left {
+  border-left-width: 2px;
+}
+
+.boundary-right {
+  border-right-width: 2px;
+}
+.boundary-bottom {
+  border-bottom-width: 2px;
+}
+
+.source {
+  color: dodgerblue;
+}
+
+.target {
+  color: #f05d23;
+}
+
+.visited {
+  /* background: #00bfff; */
+  /* background: rgb(70, 196, 228);
+  background: linear-gradient(
+    249deg,
+    rgba(70, 196, 228, 1) 53%,
+    rgba(0, 215, 255, 0.9) 100%
+  ); */
+  background: #ba135d;
+  transition: background 100ms ease-in;
+}
+
+.unvisited {
+  background: none;
+}
+
+.source-node,
+.target-node {
+  cursor: grab;
+}
+
+.weight {
+  color: #fff;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.block-cell {
+  background: #892cdc;
+}
