@@ -4,14 +4,8 @@ const ejs = require("ejs");
 const path = require("path");
 const cors = require("cors");
 const request = require("request");
-const { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } = require("constants");
-const app = express();
-const code = `public class HelloWorld{
 
-  public static void main(String []args){
-     System.out.println("Hello World");
-  }
-}`;
+const app = express();
 
 app.use(cors());
 app.use(express.json());
