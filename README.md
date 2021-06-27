@@ -1,12 +1,17 @@
 # Algorithm Visualizer 
 
 
-A web app for visualizing different algorithms ranging from sorting,searching to graph.Also has a code editor for the user to practice algorithms
+A web app for visualizing different algorithms ranging from sorting,searching to graph.Also has a code editor for the user to practice algorithms<br/>
+#### Check the project [here](https://algo-visualizer242.herokuapp.com/)<br/>
 Tech Stack used:
--Html
--Css
--Jquery
--Express
+- Html
+- Css
+- Jquery
+- Express
+
+## Steps to start the app(if you want to fork it and run on your local machine)
+1.Should have Nodejs installed
+2.Go to the root of the directory and in the terminal write npm start or nodemon server(if you have nodemon)
 
 ## Algorithms visualized:
 Sorting:
