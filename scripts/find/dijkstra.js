@@ -1,3 +1,4 @@
+//Function which calls dijkstra algo
 async function dijkstraHelper(graph, source, target) {
   console.log("dij started");
   console.log("src", source);
@@ -6,7 +7,7 @@ async function dijkstraHelper(graph, source, target) {
   if (path) await generatePath(path);
   endAlgorithm();
 }
-
+//Actual function for dijkstra algo
 async function dijkstraAlgo(graph, source, target) {
   let pq = new PriorityQueue();
   let vis = createVisistedArray();

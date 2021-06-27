@@ -24,7 +24,7 @@ $(".size-input input").change(function (e) {
   size = val;
   shuffleArray();
 });
-
+//Function to generate a random array
 function generateArray() {
   arr = [];
   for (let i = 0; i < size; i++) {
@@ -44,7 +44,7 @@ $("#shuffle-btn").click(function (e) {
   if (play) return;
   shuffleArray();
 });
-
+// Function to get width of a bar in dom
 function getWidth() {
   let width;
   if (size > 50) {
@@ -53,7 +53,7 @@ function getWidth() {
   if (width > 30) return 30;
   return width;
 }
-
+//A function that adds bars to dom representing numbers in the array
 function addBarsToDom() {
   const fragment = document.createDocumentFragment();
   $(".bars-container").html("");
@@ -70,7 +70,7 @@ function addBarsToDom() {
     $(".bar").css({ "margin-left": "5px" });
   }
 }
-
+//A function to call the selected sorting algo
 $("#sort-btn").click(function (e) {
   if (play) return;
   const value = $("#sort-selector").val();
@@ -118,7 +118,7 @@ function endAlgo() {
 $(document).ready(function (e) {
   shuffleArray();
 });
-
+//Function which call shuffling helper functions
 function shuffleArray() {
   generateArray();
   addBarsToDom();

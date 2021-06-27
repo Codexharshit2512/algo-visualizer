@@ -1,3 +1,4 @@
+//A function which calls the bfs function
 async function Bfshelper(graph, source, target) {
   const path = await Bfs(graph, source, target);
   console.log(path);
@@ -5,7 +6,7 @@ async function Bfshelper(graph, source, target) {
   console.log(graph);
   endAlgorithm();
 }
-
+//creates a visited array of size of the grid in the dom
 function createVisistedArray() {
   let vis = [];
   for (let i = 0; i < rows; i++) {
@@ -17,7 +18,7 @@ function createVisistedArray() {
   }
   return vis;
 }
-
+//Function to check if a cell is valid or not-used by bfs and dijkstra
 function isValidCell(i, j, vis, graph) {
   if (
     i < 0 ||
@@ -30,7 +31,7 @@ function isValidCell(i, j, vis, graph) {
     return false;
   return true;
 }
-
+//Actual bfs function
 async function Bfs(graph, source, target) {
   let q = new Queue();
   let sr = source[0];

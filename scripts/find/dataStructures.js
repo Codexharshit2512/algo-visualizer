@@ -1,3 +1,4 @@
+// Queue class
 class Queue {
   constructor() {
     this.queue = [];
@@ -32,7 +33,7 @@ class Queue {
     }
   }
 }
-
+// Pair class
 class Pair {
   constructor(row, col, arr, wt) {
     this.row = row;
@@ -42,7 +43,7 @@ class Pair {
     this.path.push([row, col]);
   }
 }
-
+//Priority Queue class
 class PriorityQueue {
   constructor() {
     this.heap = [];
@@ -63,9 +64,6 @@ class PriorityQueue {
       if (this.heap[par].wt > this.heap[idx].wt) {
         this.swap(par, idx);
       }
-      // } else {
-      //   break;
-      // }
       idx = par;
     }
   }

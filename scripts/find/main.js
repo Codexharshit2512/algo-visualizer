@@ -11,6 +11,7 @@ let targetNode = $(`<p class="target">T</p>`);
 let blockCells = 0;
 let algoRunning = false;
 let gridEmpty = true;
+
 $(".delay-indicator").html(
   `Delay: ${parseInt($(".delay-input input").val())}ms`
 );
@@ -20,7 +21,7 @@ $(".delay-input input").change(function (e) {
   $(".delay-indicator").html(`Delay: ${val}ms`);
   delay = val;
 });
-
+// Generates the grid in Dom
 function generateGrid() {
   gridEmpty = true;
   $("#start-btn").css({ cursor: "pointer" });
@@ -58,7 +59,7 @@ function generateGrid() {
   assignSourceAndTargetListeners();
   if (value == "Dijkstra") assignWeightsToGraph(graph);
 }
-
+// Adding boundary classes to cells
 function addBoundaryClasses(elem, i, j) {
   if (i == 0) {
     elem.addClass("boundary-top");
@@ -73,13 +74,13 @@ function addBoundaryClasses(elem, i, j) {
     elem.addClass("boundary-right");
   }
 }
-
+//Function to grab the source node
 function grabSourceNode() {
   let row = source[0];
   let col = source[1];
   return $(`#row-${row}-col-${col}`);
 }
-
+//Function to grab the target node
 function grabTargetNode() {
   let row = target[0];
   let col = target[1];
@@ -95,12 +96,12 @@ $("#algo-selector").change(function (e) {
     removeWeights(graph);
   }
 });
-
+//Execute the selected algo
 $("#start-btn").click(async function (e) {
   if (algoRunning) return;
   if (!gridEmpty) return;
   const value = $("#algo-selector").val();
-  // const rand = getRandomInt(0, size - 1);
+
   switch (value) {
     case "Bfs":
       startAlgorithm();
@@ -116,7 +117,7 @@ $("#start-btn").click(async function (e) {
       break;
   }
 });
-
+//A function which runs if any algo starts for ui changes
 function startAlgorithm() {
   gridEmpty = false;
   algoRunning = true;
@@ -127,7 +128,7 @@ function startAlgorithm() {
   $("#start-btn").addClass("disabled");
   $("#clear-blocks").addClass("disabled");
 }
-
+//A function which runs if any algo ends for ui changes
 function endAlgorithm() {
   algoRunning = false;
   $("#clear-btn").css({ cursor: "pointer" });
@@ -150,13 +151,14 @@ $(document).ready(function (e) {
 let sourceDragging = false;
 let targetDragging = false;
 let blockDragging = false;
+//To assign Event listners to source and target node
 function assignSourceAndTargetListeners() {
   let sNode = grabSourceNode();
   let tNode = grabTargetNode();
   sNode[0].addEventListener("mousedown", NodeMouseDown, true);
   tNode[0].addEventListener("mousedown", NodeMouseDown, true);
 }
-
+//To remove Event listners from source and target node
 function removeSourceAndTargetListeners() {
   let sNode = grabSourceNode()[0];
   let tNode = grabTargetNode()[0];
@@ -174,7 +176,7 @@ function NodeMouseDown(e) {
     targetDragging = true;
   }
 }
-
+//To assign event listeners to every node in the grid
 function assignNodeEventListners() {
   $(".node").mouseenter(function (e) {
     let sNode = grabSourceNode();
@@ -257,7 +259,7 @@ function assignNodeEventListners() {
     }
   });
 }
-
+//To assign a weight to a node -only used in dijkstra algo
 function assignWeightToNode(row, col) {
   let weight = getRandomInt(4, 50);
   graph[row][col] = weight;
@@ -265,14 +267,14 @@ function assignWeightToNode(row, col) {
   $(`#row-${row}-col-${col}`).html("");
   $(`#row-${row}-col-${col}`).append(weightNode);
 }
-
+//A function to get index of a node in the grid
 function getIds(elem) {
   const str = elem.attr("id").split("-");
   const row = parseInt(str[1]);
   const col = parseInt(str[3]);
   return [row, col];
 }
-
+// A function to remove source and target node from a node
 function removeEnds(type) {
   if (type == "source") {
     let sNode = grabSourceNode();
@@ -284,13 +286,13 @@ function removeEnds(type) {
     tNode.removeClass("target-node");
   }
 }
-
+//Function to generate a random number
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+//Function to assign weights to the entire graph
 function assignWeightsToGraph(graph) {
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
@@ -305,7 +307,7 @@ function assignWeightsToGraph(graph) {
     }
   }
 }
-
+//Function to remove weights from the entire graph
 function removeWeights(graph) {
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
@@ -324,7 +326,7 @@ $("#clear-blocks").click(function (e) {
     clearBlockCells();
   }
 });
-
+//A function to clear block cells
 function clearBlockCells() {
   if (blockCells > 0) {
     for (let i = 0; i < rows; i++) {
@@ -342,6 +344,7 @@ function clearBlockCells() {
     blockCells = 0;
   }
 }
+//A function to check whether a cell is a target or a source node or not
 function isEqual(row, col, type) {
   let cellHash = `${row}${col}`;
   if (type === "source") {
