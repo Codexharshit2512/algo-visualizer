@@ -10,8 +10,8 @@ Tech Stack used:
 - Express
 
 ## Steps to start the app(if you want to fork it and run on your local machine)
-1.Should have Nodejs installed
-2.Go to the root of the directory and in the terminal write npm start or nodemon server(if you have nodemon)
+1. Should have Nodejs installed
+2. Go to the root of the directory and in the terminal write npm start or nodemon server(if you have nodemon)
 
 ## Algorithms visualized:
 Sorting:
@@ -30,8 +30,6 @@ Searching:
 Graph:
 - Breadth First Search(BFS)
 - Dijkstra Algorithm
-
-
 
 ## Folder Structure 
 Sort:<br/>
