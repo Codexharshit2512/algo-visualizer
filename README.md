@@ -37,7 +37,7 @@ Graph:<br />
 ![graph](/images/pathcapture.PNG)<br/>
 
 ## Data Structures Used
-![ds](/images/ds.PNG)<br/>
+![ds](/images/ds.png)<br/>
 
 ## Note
 For anyone who wants to go through the code for every visualizer main.js will act as the main file for dom manipulation and calling helper functions like bfs,bubble sort etc
