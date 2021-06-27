@@ -42,6 +42,7 @@ $(".run-code-btn").click(function (e) {
     stdin,
     language: lang,
   };
+  console.log(data);
   $(".output").html("");
   $(".cpu-time").html("");
   $(".memory").html("");

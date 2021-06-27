@@ -1,11 +1,20 @@
 const express = require("express");
+const result = require("dotenv").config();
 const ejs = require("ejs");
 const path = require("path");
+const cors = require("cors");
 const request = require("request");
+const { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } = require("constants");
 const app = express();
+const code = `public class HelloWorld{
 
+  public static void main(String []args){
+     System.out.println("Hello World");
+  }
+}`;
+
+app.use(cors());
 app.use(express.json());
-require("dotenv").config();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
